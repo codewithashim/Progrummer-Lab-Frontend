@@ -10,7 +10,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import app from "../Firebase/Firebsae.config";
+import app from "../Firebase/Firebase.config";
 import { useEffect } from "react";
 
 export const AuthContext = createContext();

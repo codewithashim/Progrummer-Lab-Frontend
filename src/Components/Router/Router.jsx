@@ -7,6 +7,7 @@ import Courses from "../Courses/Courses";
 import CoursesDetails from "../Courses/CoursesDetails/CoursesDetails";
 import Login from "../../Auth/Login/Login";
 import Register from "../../Auth/Register/Register";
+import FAQ from "../FAQ/FAQ";
 
 const route = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const route = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
+      },
+      {
+        path: "faq",
+        element: <FAQ></FAQ>,
       },
 
       // ========== NotFound Route  //
