@@ -1,10 +1,15 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "../Components/Header/Header";
 
 const MainLayout = () => {
   return (
-    <div>
-      <h1>Hello LyOut</h1>
-    </div>
+    <>
+      <section>
+        <Header></Header>
+        <Outlet></Outlet>
+      </section>
+    </>
   );
 };
 
