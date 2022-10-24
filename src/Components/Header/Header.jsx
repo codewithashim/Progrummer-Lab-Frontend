@@ -1,8 +1,24 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../Assects/logo.png";
-
+import {
+  HiMenuAlt1,
+  HiOutlineCode,
+  HiSpeakerphone,
+  HiOutlineDatabase,
+  HiOutlinePresentationChartBar,
+} from "react-icons/hi";
+import {
+  FaPenNib,
+  FaFigma,
+  FaRegChartBar,
+  FaSun,
+  FaCloudSun,
+} from "react-icons/fa";
+import { useState } from "react";
 const Header = () => {
+  const [toggol, setToggol] = useState(true);
+
   return (
     <>
       <header>
@@ -53,11 +69,64 @@ const Header = () => {
                 </ul>
               </div>
               <Link className="normal-case text-xl" to="/">
-                <img src={logo} alt="Programmer Lab" width={80} />
+                <img src={logo} alt="Programmer Lab" width={70} />
               </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal p-0">
+                {/* ======== cetagory ========== */}
+                <li tabIndex={0}>
+                  <Link className="text-blue-600">
+                    <HiMenuAlt1></HiMenuAlt1>
+                    Cetagory
+                  </Link>
+                  <ul className="p-2">
+                    <li className="mb-2">
+                      <NavLink>
+                        <HiOutlineCode></HiOutlineCode>
+                        Web Development
+                      </NavLink>
+                    </li>
+                    <li className="mb-2">
+                      <NavLink>
+                        <HiSpeakerphone></HiSpeakerphone>
+                        Digital Marketing
+                      </NavLink>
+                    </li>
+                    <li className="mb-2">
+                      <NavLink>
+                        <FaFigma></FaFigma>
+                        UI/UX Design
+                      </NavLink>
+                    </li>
+                    <li className="mb-2">
+                      <NavLink>
+                        <HiOutlineDatabase></HiOutlineDatabase>
+                        DataSince
+                      </NavLink>
+                    </li>
+                    <li className="mb-2">
+                      <NavLink>
+                        <HiOutlinePresentationChartBar></HiOutlinePresentationChartBar>
+                        Finance Managment
+                      </NavLink>
+                    </li>
+                    <li className="mb-2">
+                      <NavLink>
+                        <FaPenNib></FaPenNib>
+                        Graphic Design
+                      </NavLink>
+                    </li>
+                    <li className="mb-2">
+                      <NavLink>
+                        <FaRegChartBar></FaRegChartBar>
+                        Product Marketing
+                      </NavLink>
+                    </li>
+                  </ul>
+                </li>
+                {/* ======= Cetagoty */}
+
                 <li>
                   <NavLink to="/home">Home</NavLink>
                 </li>
@@ -76,7 +145,16 @@ const Header = () => {
               </ul>
             </div>
             <div className="navbar-end">
-              <Link className="btn">Login</Link>
+              <div className="darkMode mr-3">
+                <Link onClick={() => setToggol(!toggol)}>
+                  {toggol ? (
+                    <FaSun className="text-3xl text-blue-300"></FaSun>
+                  ) : (
+                    <FaCloudSun className="text-3xl text-black"></FaCloudSun>
+                  )}
+                </Link>
+              </div>
+              <Link className="btn btn-sm mx-3">Login</Link>
             </div>
           </div>
         </nav>
