@@ -1,0 +1,18 @@
+.heroSection {
+    background: url(../../Assects/hero_bg.jpg);
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    position: relative;
+    isolation: isolate;
+    text-align: center;
+}
+
+.heroSection::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.8;
+    z-index: -1;
+    background: #000;
+}
