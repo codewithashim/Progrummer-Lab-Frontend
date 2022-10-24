@@ -16,12 +16,12 @@ import {
   FaCloudSun,
 } from "react-icons/fa";
 import { useState } from "react";
+import "./Header.css";
 const Header = () => {
   const [toggol, setToggol] = useState(true);
-
   return (
     <>
-      <header>
+      <header className="mainHeaderSection">
         <nav>
           <div className="navbar bg-base-100 shadow-lg px-6">
             <div className="navbar-start">
@@ -44,27 +44,77 @@ const Header = () => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className="menu menu-compact dropdown-content mt-3 p-3 shadow bg-base-100 rounded-box w-52"
+                  className="menu menu-compact dropdown-content mt-1 p-1 shadow bg-base-100 rounded-box w-56"
                 >
-                  <Link
+                  <li tabIndex={0} className="w-28">
+                    <Link className="text-blue-600">
+                      <HiMenuAlt1></HiMenuAlt1>
+                      Cetagory
+                    </Link>
+                    <ul className="p-2">
+                      <li className="mb-2">
+                        <NavLink>
+                          <HiOutlineCode></HiOutlineCode>
+                          Web Development
+                        </NavLink>
+                      </li>
+                      <li className="mb-2">
+                        <NavLink>
+                          <HiSpeakerphone></HiSpeakerphone>
+                          Digital Marketing
+                        </NavLink>
+                      </li>
+                      <li className="mb-2">
+                        <NavLink>
+                          <FaFigma></FaFigma>
+                          UI/UX Design
+                        </NavLink>
+                      </li>
+                      <li className="mb-2">
+                        <NavLink>
+                          <HiOutlineDatabase></HiOutlineDatabase>
+                          DataSince
+                        </NavLink>
+                      </li>
+                      <li className="mb-2">
+                        <NavLink>
+                          <HiOutlinePresentationChartBar></HiOutlinePresentationChartBar>
+                          Finance Managment
+                        </NavLink>
+                      </li>
+                      <li className="mb-2">
+                        <NavLink>
+                          <FaPenNib></FaPenNib>
+                          Graphic Design
+                        </NavLink>
+                      </li>
+                      <li className="mb-2">
+                        <NavLink>
+                          <FaRegChartBar></FaRegChartBar>
+                          Product Marketing
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </li>
+                  <NavLink
                     className={({ isActive }) =>
                       isActive ? "active" : undefined
                     }
                     to="/home"
                   >
                     Home
-                  </Link>
+                  </NavLink>
                   <li>
-                    <Link to="/courses">Courses</Link>
+                    <NavLink to="/courses">Courses</NavLink>
                   </li>
                   <li>
-                    <Link to="/blog">Blog</Link>
+                    <NavLink to="/blog">Blog</NavLink>
                   </li>
                   <li>
-                    <Link to="/faq">FAQ</Link>
+                    <NavLink to="/faq">FAQ</NavLink>
                   </li>
                   <li>
-                    <Link to="/contact">Contact</Link>
+                    <NavLink to="/contact">Contact</NavLink>
                   </li>
                 </ul>
               </div>
@@ -75,72 +125,72 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal p-0">
                 {/* ======== cetagory ========== */}
-                <li tabIndex={0}>
+                <li tabIndex={0} style={{ zIndex: "80" }}>
                   <Link className="text-blue-600">
                     <HiMenuAlt1></HiMenuAlt1>
                     Cetagory
                   </Link>
                   <ul className="p-2">
                     <li className="mb-2">
-                      <Link>
+                      <NavLink>
                         <HiOutlineCode></HiOutlineCode>
                         Web Development
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="mb-2">
-                      <Link>
+                      <NavLink>
                         <HiSpeakerphone></HiSpeakerphone>
                         Digital Marketing
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="mb-2">
-                      <Link>
+                      <NavLink>
                         <FaFigma></FaFigma>
                         UI/UX Design
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="mb-2">
-                      <Link>
+                      <NavLink>
                         <HiOutlineDatabase></HiOutlineDatabase>
                         DataSince
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="mb-2">
-                      <Link>
+                      <NavLink>
                         <HiOutlinePresentationChartBar></HiOutlinePresentationChartBar>
                         Finance Managment
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="mb-2">
-                      <Link>
+                      <NavLink>
                         <FaPenNib></FaPenNib>
                         Graphic Design
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="mb-2">
-                      <Link>
+                      <NavLink>
                         <FaRegChartBar></FaRegChartBar>
                         Product Marketing
-                      </Link>
+                      </NavLink>
                     </li>
                   </ul>
                 </li>
                 {/* ======= Cetagoty */}
                 <li>
-                  <Link to="/home">Home</Link>
+                  <NavLink to="/home">Home</NavLink>
                 </li>
 
                 <li>
-                  <Link to="/courses">Courses</Link>
+                  <NavLink to="/courses">Courses</NavLink>
                 </li>
                 <li>
-                  <Link to="/blog">Blog</Link>
+                  <NavLink to="/blog">Blog</NavLink>
                 </li>
                 <li>
-                  <Link to="/faq">FAQ</Link>
+                  <NavLink to="/faq">FAQ</NavLink>
                 </li>
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <NavLink to="/contact">Contact</NavLink>
                 </li>
               </ul>
             </div>
