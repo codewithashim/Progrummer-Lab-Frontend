@@ -1,0 +1,5 @@
+.DetailsMainContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5fr, 250px)) !important;
+    gap: 2rem;
+}

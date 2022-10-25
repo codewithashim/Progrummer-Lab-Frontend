@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Course = ({ course }) => {
   const {
+    id,
     course_name,
     course_duration,
     total_rating,
@@ -73,10 +74,9 @@ const Course = ({ course }) => {
           </div>
           <div className="card-actions justify-end">
             <div className="badge badge-outline">Instructer {instructer}</div>
-            {/* <div className="badge badge-outline">Products</div> */}
           </div>
           <div>
-            <Link className="btn btn-sm mt-2 btn-primary mr-1">
+            <Link className="btn btn-sm mt-2 btn-primary mr-1" to={`/courses/${id}`}>
               See Details
             </Link>
             <Link className="btn btn-sm mt-2 btn-primary">Purches Now</Link>

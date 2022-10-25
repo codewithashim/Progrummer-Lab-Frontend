@@ -1,10 +1,29 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+import DetailsLeftSideContent from "./DetailsLeftSideContent/DetailsLeftSideContent";
+import "./CourseDetails.css";
 
 const CoursesDetails = () => {
+  const courseDetails = useLoaderData();
+  console.log(courseDetails);
+
   return (
-    <div>
-      <h1>Hello details</h1>
-    </div>
+    <>
+      <section className="p-6">
+        <div className="DetailsHeader"></div>
+        <div className="DetailsMainContainer">
+          <div className="DetailsMainContainerLeft">
+            {
+              <DetailsLeftSideContent
+                key={courseDetails.id}
+                details={courseDetails}
+              ></DetailsLeftSideContent>
+            }
+          </div>
+          <div className="DetailsMainContainerRight"></div>
+        </div>
+      </section>
+    </>
   );
 };
 
