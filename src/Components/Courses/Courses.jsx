@@ -1,28 +1,26 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import Course from "./Course/Course";
 import CourseLeftNav from "./CourseLeftNav/CourseLeftNav";
+import "./Courses.css";
 
 const Courses = () => {
-  const course = useLoaderData()
+  const course = useLoaderData();
 
   return (
     <>
       <section>
-        <div className="container mx-auto grid md:grid-cols-2">
-          <div className="courseCetagorySide md:w-2/5 min-h-screen bg-slate-300">
+        <div className="container mainCourseContainers">
+          <div className="courseCetagorySide  min-h-screen bg-slate-300">
             <div className="p-4">
               <CourseLeftNav></CourseLeftNav>
             </div>
           </div>
-          <div className="mainCourseSide md:w-7/12">
-            <div className="courseMainContainer">
-              {
-                course.map(course => {
-                  return(
-                    
-                  )
-                })
-              }
+          <div className="mainCourseSide ">
+            <div className="grid" id="CourseCard">
+              {course.map((course) => {
+                return <Course key={course.id} course={course}></Course>;
+              })}
             </div>
           </div>
         </div>

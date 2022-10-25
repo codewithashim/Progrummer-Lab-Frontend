@@ -19,7 +19,7 @@ const CourseLeftNav = () => {
           {cetagory.map((cetagory) => {
             return (
               <div>
-                <h3 className="p-3 border mb-2 rounded shadow cursor-pointer">
+                <h3 className="p-2 border mb-2  rounded shadow cursor-pointer">
                   <Link to={`/cetagory/${cetagory.id}`}>
                     {cetagory.category}
                   </Link>
