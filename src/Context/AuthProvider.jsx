@@ -37,6 +37,17 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, provider);
   };
+  //=============================== facebook Sign In ===============================
+  const ProviderFacebookLogin = (provider) => {
+    setLoading(true);
+    return signInWithPopup(auth, provider);
+  };
+  //=============================== Github Sign In ===============================
+  const ProviderGithubLogin = (provider) => {
+    setLoading(true);
+    return signInWithPopup(auth, provider);
+  };
+
   //=============================== Sign Out ===============================
   const logOut = () => {
     setLoading(true);
@@ -80,6 +91,8 @@ const AuthProvider = ({ children }) => {
     setLoading,
     updateUserProfile,
     veryfyEmail,
+    ProviderFacebookLogin,
+    ProviderGithubLogin,
   };
 
   return (

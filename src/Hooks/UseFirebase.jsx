@@ -1,8 +1,13 @@
-import { GoogleAuthProvider } from "firebase/auth";
+import {
+  FacebookAuthProvider,
+  GithubAuthProvider,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import { useContext, useState } from "react";
-import { AuthContext } from "../AuthProvider/AuthProvider";
+
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Context/AuthProvider";
 
 const UseFirebase = () => {
   const {
@@ -10,6 +15,8 @@ const UseFirebase = () => {
     updateUserProfile,
     providerRegister,
     ProviderGoogleLogin,
+    ProviderFacebookLogin,
+    ProviderGithubLogin,
     logOut,
     veryfyEmail,
     setLoading,
@@ -149,6 +156,53 @@ const UseFirebase = () => {
   };
   //=============================== Google Sign In ===============================
 
+  //=============================== Facebook Sign In ===============================
+  const facebookProvider = new FacebookAuthProvider();
+
+  const hendelSignInWithFacebook = () => {
+    ProviderFacebookLogin(facebookProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire("Successfuly Logedin!", "You clicked the button!", "success");
+        navigate("/");
+        setError("");
+      })
+      .catch((error) => {
+        console.log(error);
+        const errorMessage = error.message;
+        setError(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: errorMessage,
+        });
+      });
+  };
+
+  // =============================== Github Sign In ===============================
+  const githubProvider = new GithubAuthProvider();
+  const hendelSignInWithGithub = () => {
+    ProviderGithubLogin(githubProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire("Successfuly Logedin!", "You clicked the button!", "success");
+        navigate("/");
+        setError("");
+      })
+      .catch((error) => {
+        console.log(error);
+        const errorMessage = error.message;
+        setError(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: errorMessage,
+        });
+      });
+  };
+
   //=============================== Sign Out ===============================
   const hendelLogout = () => {
     logOut()
@@ -172,6 +226,8 @@ const UseFirebase = () => {
   return {
     hendelLogout,
     hendelSignInWithGoogle,
+    hendelSignInWithFacebook,
+    hendelSignInWithGithub,
     hendelLogin,
     error,
     hendelRegister,
