@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../Assects/logo.png";
 import {
@@ -20,6 +20,14 @@ import "./Header.css";
 import UseFirebase from "../../Hooks/UseFirebase";
 import { AuthContext } from "../../Context/AuthProvider";
 const Header = () => {
+  const [cetagory, setCetagory] = useState([]);
+
+  useEffect(() => {
+    fetch("https://progrummer-lab-server.vercel.app/category")
+      .then((res) => res.json())
+      .then((data) => setCetagory(data));
+  }, []);
+
   const { user } = useContext(AuthContext);
   const { hendelLogout } = UseFirebase();
 
@@ -51,6 +59,7 @@ const Header = () => {
                   tabIndex={0}
                   className="menu menu-compact dropdown-content mt-1 p-1 shadow bg-base-100 rounded-box w-56"
                 >
+                  {/* ======== cetagory======== */}
                   <li tabIndex={0} className="w-28">
                     <Link className="text-blue-600">
                       <HiMenuAlt1></HiMenuAlt1>
@@ -101,6 +110,7 @@ const Header = () => {
                       </li>
                     </ul>
                   </li>
+                  {/* ======== cetagory======== */}
                   <NavLink
                     className={({ isActive }) =>
                       isActive ? "active" : undefined
@@ -130,53 +140,23 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal p-0">
                 {/* ======== cetagory ========== */}
+
                 <li tabIndex={0} style={{ zIndex: "80" }}>
                   <Link className="text-blue-600">
                     <HiMenuAlt1></HiMenuAlt1>
                     Cetagory
                   </Link>
                   <ul className="p-2">
-                    <li className="mb-2">
-                      <NavLink>
-                        <HiOutlineCode></HiOutlineCode>
-                        Web Development
-                      </NavLink>
-                    </li>
-                    <li className="mb-2">
-                      <NavLink>
-                        <HiSpeakerphone></HiSpeakerphone>
-                        Digital Marketing
-                      </NavLink>
-                    </li>
-                    <li className="mb-2">
-                      <NavLink>
-                        <FaFigma></FaFigma>
-                        UI/UX Design
-                      </NavLink>
-                    </li>
-                    <li className="mb-2">
-                      <NavLink>
-                        <HiOutlineDatabase></HiOutlineDatabase>
-                        DataSince
-                      </NavLink>
-                    </li>
-                    <li className="mb-2">
-                      <NavLink>
-                        <HiOutlinePresentationChartBar></HiOutlinePresentationChartBar>
-                        Finance Managment
-                      </NavLink>
-                    </li>
-                    <li className="mb-2">
-                      <NavLink>
-                        <FaPenNib></FaPenNib>
-                        Graphic Design
-                      </NavLink>
-                    </li>
-                    <li className="mb-2">
-                      <NavLink>
-                        <FaRegChartBar></FaRegChartBar>
-                        Product Marketing
-                      </NavLink>
+                    <li>
+                      {cetagory.map((cetagory) => {
+                        return (
+                          <NavLink className="mb-1">
+                            <Link to={`/cetagory/${cetagory.id}`}>
+                              {cetagory.category}
+                            </Link>
+                          </NavLink>
+                        );
+                      })}
                     </li>
                   </ul>
                 </li>
