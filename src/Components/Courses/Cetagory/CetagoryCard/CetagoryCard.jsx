@@ -2,7 +2,7 @@ import React from "react";
 import { FaClock, FaFileVideo } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Course = ({ course }) => {
+const CetagoryCard = ({ courseCetagory }) => {
   const {
     course_name,
     course_duration,
@@ -11,7 +11,7 @@ const Course = ({ course }) => {
     instructer,
     total_vedio,
     img,
-  } = course;
+  } = courseCetagory;
   return (
     <>
       <div
@@ -87,4 +87,4 @@ const Course = ({ course }) => {
   );
 };
 
-export default Course;
+export default CetagoryCard;

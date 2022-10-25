@@ -17,6 +17,11 @@ const Courses = () => {
             </div>
           </div>
           <div className="mainCourseSide ">
+            <div>
+              <h1 className="text-2xl font-bold text-center p-4 text-gray-700">
+                Our Popular Courses
+              </h1>
+            </div>
             <div className="grid" id="CourseCard">
               {course.map((course) => {
                 return <Course key={course.id} course={course}></Course>;

@@ -1,20 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../Assects/logo.png";
-import {
-  HiMenuAlt1,
-  HiOutlineCode,
-  HiSpeakerphone,
-  HiOutlineDatabase,
-  HiOutlinePresentationChartBar,
-} from "react-icons/hi";
-import {
-  FaPenNib,
-  FaFigma,
-  FaRegChartBar,
-  FaSun,
-  FaCloudSun,
-} from "react-icons/fa";
+import { HiMenuAlt1 } from "react-icons/hi";
+import { FaSun, FaCloudSun } from "react-icons/fa";
 import { useState } from "react";
 import "./Header.css";
 import UseFirebase from "../../Hooks/UseFirebase";
@@ -60,53 +48,22 @@ const Header = () => {
                   className="menu menu-compact dropdown-content mt-1 p-1 shadow bg-base-100 rounded-box w-56"
                 >
                   {/* ======== cetagory======== */}
-                  <li tabIndex={0} className="w-28">
+                  <li tabIndex={0} style={{ zIndex: "80" }}>
                     <Link className="text-blue-600">
                       <HiMenuAlt1></HiMenuAlt1>
                       Cetagory
                     </Link>
                     <ul className="p-2">
-                      <li className="mb-2">
-                        <NavLink>
-                          <HiOutlineCode></HiOutlineCode>
-                          Web Development
-                        </NavLink>
-                      </li>
-                      <li className="mb-2">
-                        <NavLink>
-                          <HiSpeakerphone></HiSpeakerphone>
-                          Digital Marketing
-                        </NavLink>
-                      </li>
-                      <li className="mb-2">
-                        <NavLink>
-                          <FaFigma></FaFigma>
-                          UI/UX Design
-                        </NavLink>
-                      </li>
-                      <li className="mb-2">
-                        <NavLink>
-                          <HiOutlineDatabase></HiOutlineDatabase>
-                          DataSince
-                        </NavLink>
-                      </li>
-                      <li className="mb-2">
-                        <NavLink>
-                          <HiOutlinePresentationChartBar></HiOutlinePresentationChartBar>
-                          Finance Managment
-                        </NavLink>
-                      </li>
-                      <li className="mb-2">
-                        <NavLink>
-                          <FaPenNib></FaPenNib>
-                          Graphic Design
-                        </NavLink>
-                      </li>
-                      <li className="mb-2">
-                        <NavLink>
-                          <FaRegChartBar></FaRegChartBar>
-                          Product Marketing
-                        </NavLink>
+                      <li>
+                        {cetagory.map((cetagory) => {
+                          return (
+                            <NavLink className="mb-1">
+                              <Link to={`/cetagory/${cetagory.id}`}>
+                                {cetagory.category}
+                              </Link>
+                            </NavLink>
+                          );
+                        })}
                       </li>
                     </ul>
                   </li>

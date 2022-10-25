@@ -4,31 +4,19 @@
     gap: 2rem;
 }
 
-#CourseCard {
+#CourseCard,
+#CourseCard1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 2rem;
 }
 
-/* .courseMainContainer {
-    margin-block-start: 1rem;
-    margin-inline-start: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) !important;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 250px)) !important;
-    gap: 2rem;
-} */
-
-/* .courseMainContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem;
-} */
-
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
-    #CourseCard {
+
+    #CourseCard,
+    #CourseCard1 {
         display: grid;
         grid-template-columns: repeat(1, 1fr) !important;
         gap: 1rem;
@@ -38,7 +26,9 @@
 
 /* // Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-    #CourseCard {
+
+    #CourseCard,
+    #CourseCard1 {
         display: grid;
         grid-template-columns: repeat(1, 1fr) !important;
         gap: 1rem;
@@ -49,7 +39,9 @@
 
 /* // Large devices (desktops, 992px and up) */
 @media (max-width: 992px) {
-    #CourseCard {
+
+    #CourseCard,
+    #CourseCard1 {
         display: grid;
         grid-template-columns: repeat(1, 1fr) !important;
         gap: 1rem;
