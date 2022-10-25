@@ -18,10 +18,16 @@ const route = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: () => {
+          return fetch("https://progrummer-lab-server.vercel.app/category");
+        },
         element: <Home></Home>,
       },
       {
         path: "/home",
+        loader: () => {
+          return fetch("https://progrummer-lab-server.vercel.app/category");
+        },
         element: <Home></Home>,
       },
       {
@@ -57,7 +63,7 @@ const route = createBrowserRouter([
 
       {
         path: "/category",
-        loader: ({ params }) => {
+        loader: () => {
           return fetch("https://progrummer-lab-server.vercel.app/category");
         },
         element: <CoursesCetagory></CoursesCetagory>,

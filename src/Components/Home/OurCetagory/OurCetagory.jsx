@@ -1,21 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./OurCetagory.css";
 
-const OurCetagory = () => {
+const OurCetagory = ({ cetagory }) => {
+  const { category, img, details, id } = cetagory;
   return (
     <>
       <section>
-        <div className="container p-6">
-          <div className="cetagoryTitle">
-            <h3 className="text-blue-600 font-bold text-[1.5rem]">
-              OUR COURSE CATEGORIES
-            </h3>
-            <h2 className="text-black font-bold text-[2.3rem]">
-              Explore Top Categories
-            </h2>
-          </div>
+        <div className="container p-4 mx-auto">
           <div className="cetagoryContainer">
-    
+            <div className="card card-side bg-base-100 shadow-xl  p-4">
+              <figure className="">
+                <img src={img} alt={cetagory} style={{ inlineSize: "4rem" }} />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{category}</h2>
+                <p>{details.slice(0, 80)}</p>
+                <div className="card-actions justify-end">
+                  <Link className="btn btn-link" to={`/cetagory/${id}`}>
+                    LEARN MORE{" "}
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
