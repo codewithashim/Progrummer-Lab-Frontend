@@ -1,0 +1,16 @@
+.notFoundSection {
+    inline-size: 60%;
+    margin: 0 auto;
+    padding-block-start: 3rem;
+    text-align: center;
+    display: felx;
+    justify-content: center;
+    align-items: center;
+}
+
+.notFoundSection img {
+    margin-block-start: 1.5rem;
+    inline-size: 60%;
+    block-size: 60%;
+    object-fit: cover;
+}
