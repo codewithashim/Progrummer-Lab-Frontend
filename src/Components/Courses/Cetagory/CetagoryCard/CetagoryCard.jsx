@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const CetagoryCard = ({ courseCetagory }) => {
   const {
+    id,
     course_name,
     course_duration,
     total_rating,
@@ -76,10 +77,15 @@ const CetagoryCard = ({ courseCetagory }) => {
             {/* <div className="badge badge-outline">Products</div> */}
           </div>
           <div>
-            <Link className="btn btn-sm mt-2 btn-primary mr-1">
+            <Link
+              className="btn btn-sm mt-2 btn-primary mr-1"
+              to={`/courses/${id}`}
+            >
               See Details
             </Link>
-            <Link className="btn btn-sm mt-2 btn-primary">Purches Now</Link>
+            <Link className="btn btn-sm mt-2 btn-primary" to="/checkout">
+              Purches Now
+            </Link>
           </div>
         </div>
       </div>

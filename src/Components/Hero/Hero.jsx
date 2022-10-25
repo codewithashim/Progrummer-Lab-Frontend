@@ -29,7 +29,9 @@ const Hero = () => {
             </h3>
           </div>
           <div className="mt-6 flex gap-5 items-center justify-center">
-            <Link className="btn btn-primary font-bold">Get Start</Link>
+            <Link className="btn btn-primary font-bold" to="/checkout">
+              Get Start
+            </Link>
             <Link
               className="btn btn-outline btn-primary font-bold"
               to="/courses"

@@ -230,6 +230,7 @@ const UseFirebase = () => {
     hendelSignInWithGithub,
     hendelLogin,
     error,
+    setError,
     hendelRegister,
   };
 };

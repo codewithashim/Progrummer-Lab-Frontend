@@ -76,10 +76,15 @@ const Course = ({ course }) => {
             <div className="badge badge-outline">Instructer {instructer}</div>
           </div>
           <div>
-            <Link className="btn btn-sm mt-2 btn-primary mr-1" to={`/courses/${id}`}>
+            <Link
+              className="btn btn-sm mt-2 btn-primary mr-1"
+              to={`/courses/${id}`}
+            >
               See Details
             </Link>
-            <Link className="btn btn-sm mt-2 btn-primary">Purches Now</Link>
+            <Link className="btn btn-sm mt-2 btn-primary" to="/checkout">
+              Purches Now
+            </Link>
           </div>
         </div>
       </div>

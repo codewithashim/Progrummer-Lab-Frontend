@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import DetailsLeftSideContent from "./DetailsLeftSideContent/DetailsLeftSideContent";
 import "./CourseDetails.css";
 import DetailsRightSideCard from "./DetailsRightSideCard/DetailsRightSideCard";
@@ -12,11 +12,16 @@ const CoursesDetails = () => {
     <>
       <section className="p-6">
         <div className="DetailsHeader bg-slate-300 p-6 ">
-          
+          <div className="flex">
+            <div>
+              <Link to="/courses" className="btn btn-sm btn-primary">
+                Back To Main Course
+              </Link>
+            </div>
+          </div>
         </div>
 
         <div className="DetailsMainContainer">
-
           <div className="DetailsMainContainerLeft">
             {
               <DetailsLeftSideContent

@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 import UseFirebase from "../../Hooks/UseFirebase";
+import loginbg from "../../Assects/login_bg.svg";
+
 
 const Login = () => {
   const {
@@ -9,19 +11,24 @@ const Login = () => {
     hendelSignInWithGoogle,
     hendelSignInWithFacebook,
     hendelSignInWithGithub,
+    error,
   } = UseFirebase();
+
+  
   return (
     <>
       <section>
         <div className="hero min-h-screen bg-base-200">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl font-bold">Login now!</h1>
-              <p className="py-6">
-                Let’s Started Learning Skills & Upgrade Your Life
-              </p>
+              <h1 className="text-5xl font-bold">
+                <span className="text-blue-600">Login</span> now!
+              </h1>
+              <div>
+                <img src={loginbg} alt="Login" />
+              </div>
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="card flex-shrink-0 w-full m-4 max-w-sm shadow-2xl bg-base-100">
               <form action="" onSubmit={(event) => hendelLogin(event)}>
                 <div className="card-body">
                   <div className="form-control">
@@ -56,6 +63,9 @@ const Login = () => {
                         <span className="text-blue-600">register now</span>
                       </Link>
                     </label>
+                  </div>
+                  <div>
+                    <p className="text-red-500">{error}</p>
                   </div>
                   <div className="form-control mt-3">
                     <button className="btn btn-primary">Login</button>
