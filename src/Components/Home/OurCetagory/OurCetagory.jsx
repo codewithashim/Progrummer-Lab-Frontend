@@ -14,6 +14,9 @@ const OurCetagory = () => {
               Explore Top Categories
             </h2>
           </div>
+          <div className="cetagoryContainer">
+    
+          </div>
         </div>
       </section>
     </>

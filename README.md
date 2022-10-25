@@ -12,6 +12,11 @@
 
 ================
 API Link From Vercel : https://progrummer-lab-server.vercel.app/course
+
+https://progrummer-lab-server.vercel.app/category/
+https://progrummer-lab-server.vercel.app/faq
+https://progrummer-lab-server.vercel.app/blog
+
 ====================================================================
 
 # ============ Our Functionality ==========
@@ -22,4 +27,4 @@ API Link From Vercel : https://progrummer-lab-server.vercel.app/course
 
 ====================================================================
 
-firebase deploy 
+firebase deploy

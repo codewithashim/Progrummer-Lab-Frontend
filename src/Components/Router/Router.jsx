@@ -8,6 +8,8 @@ import Login from "../../Auth/Login/Login";
 import Register from "../../Auth/Register/Register";
 import FAQ from "../FAQ/FAQ";
 import MainLayout from "../Layout/MainLayout";
+import CoursesCetagory from "../Home/OurCetagory/OurCetagory";
+import CetagoryDetails from "../CetagoryDetails/CetagoryDetails";
 
 const route = createBrowserRouter([
   {
@@ -41,6 +43,24 @@ const route = createBrowserRouter([
           );
         },
         element: <CoursesDetails></CoursesDetails>,
+      },
+
+      {
+        path: "/cetagory/:id",
+        loader: ({ params }) => {
+          return fetch(
+            `https://progrummer-lab-server.vercel.app/course${params.id}`
+          );
+        },
+        element: <CetagoryDetails></CetagoryDetails>,
+      },
+
+      {
+        path: "/category",
+        loader: ({ params }) => {
+          return fetch("https://progrummer-lab-server.vercel.app/category");
+        },
+        element: <CoursesCetagory></CoursesCetagory>,
       },
       {
         path: "/login",

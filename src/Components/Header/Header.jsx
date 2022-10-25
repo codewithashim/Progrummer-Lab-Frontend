@@ -204,7 +204,9 @@ const Header = () => {
                   )}
                 </Link>
               </div>
-              <Link className="btn btn-sm mx-3">Login</Link>
+              <Link className="btn btn-primary btn-sm mx-3" to="/login">
+                Login
+              </Link>
             </div>
           </div>
         </nav>
