@@ -15,55 +15,60 @@ const Login = () => {
               </p>
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <div className="card-body">
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Email</span>
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="email"
-                    name="email"
-                    required
-                    className="input input-bordered"
-                  />
+              <form action="">
+                <div className="card-body">
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Email</span>
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="email"
+                      name="email"
+                      required
+                      className="input input-bordered"
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Password</span>
+                    </label>
+                    <input
+                      type="password"
+                      placeholder="password"
+                      name="password"
+                      required
+                      className="input input-bordered"
+                    />
+                    <label className="label mt-2">
+                      <Link
+                        to="/register"
+                        className="label-text-alt link link-hover text-[1rem]"
+                      >
+                        Don't have an account{" "}
+                        <span className="text-blue-600">register now</span>
+                      </Link>
+                    </label>
+                  </div>
+                  <div className="form-control mt-3">
+                    <button className="btn btn-primary">Login</button>
+                  </div>
+                  <div className="form-control mt-2">
+                    <button className="btn btn-primary m-2">
+                      <FaGoogle className="mr-2 text-[1.5rem]"></FaGoogle> Login
+                      with Google
+                    </button>
+                    <button className="btn btn-primary mb-2">
+                      <FaFacebook className="mr-2 text-[1.5rem]"></FaFacebook>{" "}
+                      Login with Facebook
+                    </button>
+                    <button className="btn btn-primary mb-2">
+                      <FaGithub className="mr-2 text-[1.5rem]"></FaGithub> Login
+                      with Github
+                    </button>
+                  </div>
                 </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Password</span>
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="password"
-                    name="password"
-                    required
-                    className="input input-bordered"
-                  />
-                  <label className="label mt-2">
-                    <Link
-                      to="/register"
-                      className="label-text-alt link link-hover text-[1rem]"
-                    >
-                      Don't have an account{" "}
-                      <span className="text-blue-600">register now</span>
-                    </Link>
-                  </label>
-                </div>
-                <div className="form-control mt-3">
-                  <button className="btn btn-primary">Login</button>
-                </div>
-                <div className="form-control mt-3">
-                  <button className="btn btn-primary">
-                    <FaGoogle></FaGoogle> Login with Google
-                  </button>
-                  <button className="btn btn-primary">
-                    <FaFacebook></FaFacebook> Login with Facebook
-                  </button>
-                  <button className="btn btn-primary">
-                    <FaGithub></FaGithub> Login with Github
-                  </button>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
