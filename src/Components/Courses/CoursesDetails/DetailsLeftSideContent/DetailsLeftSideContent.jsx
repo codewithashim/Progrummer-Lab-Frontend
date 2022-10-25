@@ -1,5 +1,6 @@
 import React from "react";
 import { FaClock, FaFileVideo } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const DetailsLeftSideContent = ({ details }) => {
   const {
@@ -15,7 +16,7 @@ const DetailsLeftSideContent = ({ details }) => {
   } = details;
   return (
     <>
-      <section className="p-4" style={{ width: "60%", marginTop: "2%" }}>
+      <section className="p-4" style={{ width: "90%", marginTop: "2%" }}>
         <div className="border shadow-lg rounded p-4">
           <div className="courseProfile">
             <img src={img} alt={course_name} style={{ width: "100%" }} />
@@ -32,6 +33,9 @@ const DetailsLeftSideContent = ({ details }) => {
               </div>
               <h2 className="font-bold">
                 <span className="text-blue-500">Instructor:</span> {instructer}
+              </h2>
+              <h2>
+                <span>Price :${price}</span>
               </h2>
             </div>
             <div className="flex items-center gap-4">
@@ -74,6 +78,11 @@ const DetailsLeftSideContent = ({ details }) => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="grid h-20 mt-3 card bg-base-300 rounded-box place-items-center">
+          <Link className="btn btn-primary" to="/checkout">
+            Purcehes Now
+          </Link>
         </div>
         <div className="ourCourseOutLine">
           <div className="mt-3 border p-4 rounded">
