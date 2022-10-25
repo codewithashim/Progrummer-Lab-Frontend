@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../Assects/logo.png";
 import {
@@ -17,7 +17,12 @@ import {
 } from "react-icons/fa";
 import { useState } from "react";
 import "./Header.css";
+import UseFirebase from "../../Hooks/UseFirebase";
+import { AuthContext } from "../../Context/AuthProvider";
 const Header = () => {
+  const { user } = useContext(AuthContext);
+  const { hendelLogout } = UseFirebase();
+
   const [toggol, setToggol] = useState(true);
   return (
     <>
@@ -204,9 +209,38 @@ const Header = () => {
                   )}
                 </Link>
               </div>
-              <Link className="btn btn-primary btn-sm mx-3" to="/login">
-                Login
-              </Link>
+              <div>
+                <Link className="flex items-center gap-4">
+                  {user?.uid ? (
+                    <>
+                      <span className="mx-3">{user?.displayName}</span>
+                      <img
+                        src={user.photoURL}
+                        alt="profie"
+                        width="40"
+                        style={{
+                          borderRadius: "50%",
+                          margininsetInlineEnd: "10px",
+                        }}
+                      />
+                      <Link
+                        to="/login"
+                        className=" btn btn-primary font-semibold btn-sm"
+                        onClick={() => hendelLogout()}
+                      >
+                        Logout
+                      </Link>
+                    </>
+                  ) : (
+                    <Link
+                      to="/login"
+                      className=" btn btn-warning font-semibold btn-sm"
+                    >
+                      Login
+                    </Link>
+                  )}
+                </Link>
+              </div>
             </div>
           </div>
         </nav>

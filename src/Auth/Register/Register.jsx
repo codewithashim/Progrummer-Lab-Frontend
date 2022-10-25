@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
-import UseFirebase from "../../Hooks/UseFirebase"
+import UseFirebase from "../../Hooks/UseFirebase";
 
 const Register = () => {
   const {

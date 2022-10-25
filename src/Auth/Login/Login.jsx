@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
+import UseFirebase from "../../Hooks/UseFirebase";
 
 const Login = () => {
+  const {
+    hendelLogin,
+    hendelSignInWithGoogle,
+    hendelSignInWithFacebook,
+    hendelSignInWithGithub,
+  } = UseFirebase();
   return (
     <>
       <section>
@@ -15,7 +22,7 @@ const Login = () => {
               </p>
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <form action="">
+              <form action="" onSubmit={(event) => hendelLogin(event)}>
                 <div className="card-body">
                   <div className="form-control">
                     <label className="label">
@@ -54,15 +61,24 @@ const Login = () => {
                     <button className="btn btn-primary">Login</button>
                   </div>
                   <div className="form-control mt-2">
-                    <button className="btn btn-primary m-2">
+                    <button
+                      className="btn btn-primary m-2"
+                      onClick={hendelSignInWithGoogle}
+                    >
                       <FaGoogle className="mr-2 text-[1.5rem]"></FaGoogle> Login
                       with Google
                     </button>
-                    <button className="btn btn-primary mb-2">
+                    <button
+                      className="btn btn-primary mb-2"
+                      onClick={hendelSignInWithFacebook}
+                    >
                       <FaFacebook className="mr-2 text-[1.5rem]"></FaFacebook>{" "}
                       Login with Facebook
                     </button>
-                    <button className="btn btn-primary mb-2">
+                    <button
+                      className="btn btn-primary mb-2"
+                      onClick={hendelSignInWithGithub}
+                    >
                       <FaGithub className="mr-2 text-[1.5rem]"></FaGithub> Login
                       with Github
                     </button>
