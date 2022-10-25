@@ -140,7 +140,7 @@ const UseFirebase = () => {
         const user = result.user;
         console.log(user);
         Swal.fire("Successfuly Logedin!", "You clicked the button!", "success");
-        navigate("/");
+        navigate(from, { replace: true });
         setError("");
       })
       .catch((error) => {
@@ -165,7 +165,7 @@ const UseFirebase = () => {
         const user = result.user;
         console.log(user);
         Swal.fire("Successfuly Logedin!", "You clicked the button!", "success");
-        navigate("/");
+        navigate(from, { replace: true });
         setError("");
       })
       .catch((error) => {
@@ -188,7 +188,7 @@ const UseFirebase = () => {
         const user = result.user;
         console.log(user);
         Swal.fire("Successfuly Logedin!", "You clicked the button!", "success");
-        navigate("/");
+        navigate(from, { replace: true });
         setError("");
       })
       .catch((error) => {

@@ -1,5 +1,35 @@
 .DetailsMainContainer {
     display: grid;
-    grid-template-columns:3fr 1fr;
+    grid-template-columns: 3fr 1fr;
     /* gap: 2rem; */
+}
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+
+    .DetailsMainContainer {
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 2rem !important;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .DetailsMainContainer {
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 2rem !important;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    .DetailsMainContainer {
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 2rem !important;
+    }
+
 }

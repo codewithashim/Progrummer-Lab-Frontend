@@ -10,6 +10,8 @@ import FAQ from "../FAQ/FAQ";
 import MainLayout from "../Layout/MainLayout";
 import CoursesCetagory from "../Home/OurCetagory/OurCetagory";
 import Cetagory from "../Courses/Cetagory/Cetagory";
+import Checkout from "../Checkout/Checkout";
+import PrivetRouter from "./PrivetRouter";
 
 const route = createBrowserRouter([
   {
@@ -79,6 +81,15 @@ const route = createBrowserRouter([
       {
         path: "faq",
         element: <FAQ></FAQ>,
+      },
+
+      {
+        path: "checkout",
+        element: (
+          <PrivetRouter>
+            <Checkout></Checkout>
+          </PrivetRouter>
+        ),
       },
 
       // ========== NotFound Route  //

@@ -11,7 +11,9 @@ const CoursesDetails = () => {
   return (
     <>
       <section className="p-6">
-        <div className="DetailsHeader"></div>
+        <div className="DetailsHeader bg-slate-300 p-6 ">
+          
+        </div>
 
         <div className="DetailsMainContainer">
 
