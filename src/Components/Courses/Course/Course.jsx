@@ -31,6 +31,7 @@ const Course = ({ course }) => {
             {course_name}
             <div className="badge badge-secondary">${price}</div>
           </h2>
+          
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 font-bold text-[1rem]">
               <FaClock></FaClock> <span>{course_duration}</span>
@@ -39,6 +40,7 @@ const Course = ({ course }) => {
               <FaFileVideo></FaFileVideo> <span>{total_vedio}</span>
             </div>
           </div>
+
           <div>
             <div className="flex items-center gap-2 font-bold">
               <div className="rating">
@@ -75,6 +77,7 @@ const Course = ({ course }) => {
           <div className="card-actions justify-end">
             <div className="badge badge-outline">Instructer {instructer}</div>
           </div>
+
           <div>
             <Link
               className="btn btn-sm mt-2 btn-primary mr-1"

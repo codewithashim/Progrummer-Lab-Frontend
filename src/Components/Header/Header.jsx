@@ -150,16 +150,18 @@ const Header = () => {
                 <Link className="flex items-center gap-4">
                   {user?.uid ? (
                     <>
-                      <span className="mx-3">{user?.displayName}</span>
-                      <img
-                        src={user.photoURL}
-                        alt="profie"
-                        width="40"
-                        style={{
-                          borderRadius: "50%",
-                          margininsetInlineEnd: "10px",
-                        }}
-                      />
+                      <Link to="/profile">
+                        <img
+                          src={user.photoURL}
+                          alt="profie"
+                          width="40"
+                          style={{
+                            borderRadius: "50%",
+                            margininsetInlineEnd: "10px",
+                          }}
+                        />
+                      </Link>
+
                       <Link
                         to="/login"
                         className=" btn btn-primary font-semibold btn-sm"

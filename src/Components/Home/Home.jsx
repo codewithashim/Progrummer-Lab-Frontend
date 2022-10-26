@@ -5,6 +5,7 @@ import OurCetagory from "./OurCetagory/OurCetagory";
 
 const Home = () => {
   const courseCetagoty = useLoaderData();
+
   return (
     <>
       <section>

@@ -29,7 +29,7 @@ const Hero = () => {
             </h3>
           </div>
           <div className="mt-6 flex gap-5 items-center justify-center">
-            <Link className="btn btn-primary font-bold" to="/checkout">
+            <Link className="btn btn-primary font-bold" to="/courses">
               Get Start
             </Link>
             <Link
