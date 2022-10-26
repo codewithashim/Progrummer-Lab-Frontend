@@ -45,7 +45,7 @@ const Header = () => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className="menu menu-compact dropdown-content mt-1 p-1 shadow bg-base-100 rounded-box w-56"
+                  className="menu menu-compact dropdown-content mt-1 p-1 shadow bg-base-100 rounded-box w-40"
                 >
                   {/* ======== cetagory======== */}
                   <li tabIndex={0} style={{ zIndex: "80" }}>
@@ -84,9 +84,6 @@ const Header = () => {
                   </li>
                   <li>
                     <NavLink to="/faq">FAQ</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/contact">Contact</NavLink>
                   </li>
                 </ul>
               </div>
@@ -130,9 +127,6 @@ const Header = () => {
                 </li>
                 <li>
                   <NavLink to="/faq">FAQ</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/contact">Contact</NavLink>
                 </li>
               </ul>
             </div>

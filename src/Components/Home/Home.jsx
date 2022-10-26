@@ -3,6 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import Hero from "../Hero/Hero";
 import OurCetagory from "./OurCetagory/OurCetagory";
 
+import FilterGelagry from "./FilterGelary/FilterGelagry";
+
 const Home = () => {
   const courseCetagoty = useLoaderData();
 
@@ -28,6 +30,14 @@ const Home = () => {
                 ></OurCetagory>
               );
             })}
+          </div>
+          <div className="ourFilterGelary">
+            <div>
+              <h2 className="py-3 text-blue-600 font-bold text-2xl text-center">
+                Our Popular Courses{" "}
+              </h2>
+            </div>
+            <FilterGelagry></FilterGelagry>
           </div>
         </div>
       </section>

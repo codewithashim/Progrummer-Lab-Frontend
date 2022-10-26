@@ -6,8 +6,7 @@ const Footer = () => {
     <div className="mt-4">
       <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
         <div className="grid grid-flow-col gap-4">
-          <Link to="/">About us</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/">Home</Link>
           <Link to="/courses">Course</Link>
           <Link to="/category">Cetegory</Link>
           <Link to="/blog">Blog</Link>

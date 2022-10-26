@@ -13,6 +13,7 @@ const Course = ({ course }) => {
     total_vedio,
     img,
   } = course;
+
   return (
     <>
       <div
