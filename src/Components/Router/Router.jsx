@@ -12,6 +12,7 @@ import CoursesCetagory from "../Home/OurCetagory/OurCetagory";
 import Cetagory from "../Courses/Cetagory/Cetagory";
 import Checkout from "../Checkout/Checkout";
 import PrivetRouter from "./PrivetRouter";
+import Profile from "../Profile/Profile";
 
 const route = createBrowserRouter([
   {
@@ -34,8 +35,8 @@ const route = createBrowserRouter([
       },
       {
         path: "blog",
-        loader: ()=>{
-          return fetch("https://progrummer-lab-server.vercel.app/blog")
+        loader: () => {
+          return fetch("https://progrummer-lab-server.vercel.app/blog");
         },
         element: <Blog></Blog>,
       },
@@ -83,10 +84,16 @@ const route = createBrowserRouter([
       },
       {
         path: "faq",
-        loader: ()=>{
-          return fetch("https://progrummer-lab-server.vercel.app/faq")
+        loader: () => {
+          return fetch("https://progrummer-lab-server.vercel.app/faq");
         },
         element: <FAQ></FAQ>,
+      },
+      {
+        path:"/profile",
+        element:<PrivetRouter>
+          <Profile></Profile>
+        </PrivetRouter>
       },
 
       {
