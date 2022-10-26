@@ -160,6 +160,7 @@ const Header = () => {
                             margininsetInlineEnd: "10px",
                           }}
                         />
+                        {/* <h1>{user.displayName}</h1> */}
                       </Link>
 
                       <Link

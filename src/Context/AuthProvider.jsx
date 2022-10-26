@@ -23,9 +23,10 @@ const AuthProvider = ({ children }) => {
   //=============================== Watcher ===============================
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser === null || currentUser.emailVerified) {
-        setUser(currentUser);
-      }
+      // if (currentUser === null || currentUser.emailVerified) {
+      //   setUser(currentUser);
+      // }
+      setUser(currentUser);
       setLoading(false);
     });
 

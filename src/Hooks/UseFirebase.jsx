@@ -19,6 +19,7 @@ const UseFirebase = () => {
     ProviderGithubLogin,
     logOut,
     veryfyEmail,
+    setUser,
     setLoading,
   } = useContext(AuthContext);
 
@@ -157,13 +158,14 @@ const UseFirebase = () => {
   //=============================== Google Sign In ===============================
 
   //=============================== Facebook Sign In ===============================
-  const facebookProvider = new FacebookAuthProvider();
+  const facebookProviderForLogin = new FacebookAuthProvider();
 
   const hendelSignInWithFacebook = () => {
-    ProviderFacebookLogin(facebookProvider)
+    ProviderFacebookLogin(facebookProviderForLogin)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        // setUser(user);
         Swal.fire("Successfuly Logedin!", "You clicked the button!", "success");
         navigate(from, { replace: true });
         setError("");
@@ -181,13 +183,18 @@ const UseFirebase = () => {
   };
 
   // =============================== Github Sign In ===============================
-  const githubProvider = new GithubAuthProvider();
+  // const githubProvider = new GithubAuthProvider();
+
+  const providerGithubLogin = new GithubAuthProvider();
+
   const hendelSignInWithGithub = () => {
-    ProviderGithubLogin(githubProvider)
+    ProviderGithubLogin(providerGithubLogin)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
+        setUser(user);
         Swal.fire("Successfuly Logedin!", "You clicked the button!", "success");
+
         navigate(from, { replace: true });
         setError("");
       })
