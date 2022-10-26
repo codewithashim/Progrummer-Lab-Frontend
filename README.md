@@ -21,11 +21,16 @@ https://progrummer-lab-server.vercel.app/blog
 
 # ============ Our Functionality ==========
 
-Any One Can Purches Our Couse
+Mordan design and responsive for all device .
+in our home page have a hero section one cetagry section and filter section .
+any one can visite our course modiule and course details
+also they can dawonload our course details using a pdf file .
 
-====================================================================
+if any one want to get premiume acces then they shud be login first .
+in our website have 4 login method anyone can login by google github facebook and also they can login by email address.
 
-====================================================================
+after login anyone can visite any page .
+also user can update there profile easyly
 
 ====================================================================
 
