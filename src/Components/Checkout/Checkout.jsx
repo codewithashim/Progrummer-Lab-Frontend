@@ -36,6 +36,7 @@ const Checkout = () => {
                   <button
                     className="btn btn-sm btn-primary flex items-center gap-2"
                     onClick={toPdf}
+                    style={{fontsize: "16rem"}}
                   >
                     <FaFilePdf></FaFilePdf> Generate Pdf
                   </button>

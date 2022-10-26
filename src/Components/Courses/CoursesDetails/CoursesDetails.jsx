@@ -14,20 +14,22 @@ const CoursesDetails = () => {
     <>
       <section className="p-6">
         <div className="DetailsHeader bg-slate-300 p-6 ">
-          <div className="flex justify-between px-4">
+          <div className="flex justify-between items-center gap-2 px-4">
             <div>
               <Link to="/courses" className="btn btn-sm btn-primary">
-                Back To Main Course
+                Back Course
               </Link>
             </div>
             <div>
               <Pdf targetRef={ref} filename={courseDetails.course_name}>
                 {({ toPdf }) => (
                   <button
-                    className="btn btn-sm btn-primary flex items-center gap-2"
+                    className="btn btn-sm btn-primary flex items-center gap-1"
                     onClick={toPdf}
+                    style={{ fontSize: "10px" }}
                   >
-                    <FaFilePdf></FaFilePdf> Generate Pdf
+                    <FaFilePdf style={{ fontSize: "12px" }}></FaFilePdf>{" "}
+                    Generate Pdf
                   </button>
                 )}
               </Pdf>
