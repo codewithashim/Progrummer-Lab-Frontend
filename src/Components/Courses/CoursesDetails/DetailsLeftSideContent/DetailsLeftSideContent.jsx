@@ -82,7 +82,7 @@ const DetailsLeftSideContent = ({ details }) => {
         </div>
         <div className="grid h-20 mt-3 card bg-base-300 rounded-box place-items-center">
           <Link className="btn btn-primary" to={`/checkout/${id}`}>
-            Purcehes Now
+            Get Premium Access
           </Link>
         </div>
         <div className="ourCourseOutLine">

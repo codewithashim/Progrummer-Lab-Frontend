@@ -20,7 +20,7 @@ const DetailsRightSideCard = ({ details }) => {
           <p className="card-subtitle">Instructer: {instructer}</p>
           <div className="card-actions justify-end">
             <Link to={`/checkout/${id}`} className="btn btn-primary">
-              Purches Now
+              Get Premium Access
             </Link>
           </div>
         </div>

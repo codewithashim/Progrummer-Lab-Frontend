@@ -32,7 +32,7 @@ const Course = ({ course }) => {
             {course_name}
             <div className="badge badge-secondary">${price}</div>
           </h2>
-          
+
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 font-bold text-[1rem]">
               <FaClock></FaClock> <span>{course_duration}</span>
@@ -90,7 +90,7 @@ const Course = ({ course }) => {
               className="btn btn-sm mt-2 btn-primary"
               to={`/checkout/${id}`}
             >
-              Purches Now
+              Get Premium Access
             </Link>
           </div>
         </div>

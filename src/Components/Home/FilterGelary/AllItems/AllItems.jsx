@@ -98,7 +98,7 @@ const AllItems = ({ item }) => {
                   className="btn btn-sm mt-2 btn-primary"
                   to={`/checkout/${id}`}
                 >
-                  Purches Now
+                  Get Premium Access
                 </Link>
               </div>
             </div>
