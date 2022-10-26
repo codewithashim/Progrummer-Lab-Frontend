@@ -41,7 +41,11 @@ const Checkout = () => {
             </Link>
           </div>
         </div>
-        <div className="p-4" ref={ref}>
+        <div
+          className="p-4"
+          ref={ref}
+          style={{ width: "70%", margin: "auto", height: "auto" }}
+        >
           {
             <div className="card w-10/12 bg-base-100 shadow-xl mx-auto mt-4">
               <figure>

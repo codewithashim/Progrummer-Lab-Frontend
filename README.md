@@ -28,3 +28,4 @@ https://progrummer-lab-server.vercel.app/blog
 ====================================================================
 
 firebase deploy
+vercel --prod
