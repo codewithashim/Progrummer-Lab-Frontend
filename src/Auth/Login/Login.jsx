@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 import UseFirebase from "../../Hooks/UseFirebase";
-import loginbg from "../../Assects/login_bg.svg";
-
+import "../Auth.css";
 
 const Login = () => {
   const {
@@ -14,21 +13,17 @@ const Login = () => {
     error,
   } = UseFirebase();
 
-  
   return (
     <>
-      <section>
-        <div className="hero min-h-screen bg-base-200">
-          <div className="hero-content flex-col lg:flex-row-reverse">
+      <section className="authSection">
+        <div className="hero min-h-screen">
+          <div className="hero-content flex flex-col">
             <div className="text-center lg:text-left">
               <h1 className="text-5xl font-bold">
                 <span className="text-blue-600">Login</span> now!
               </h1>
-              <div>
-                <img src={loginbg} alt="Login" />
-              </div>
             </div>
-            <div className="card flex-shrink-0 w-full m-4 max-w-sm shadow-2xl bg-base-100">
+            <div className="card max-w-sm shadow-2xl bg-base-100">
               <form action="" onSubmit={(event) => hendelLogin(event)}>
                 <div className="card-body">
                   <div className="form-control">
