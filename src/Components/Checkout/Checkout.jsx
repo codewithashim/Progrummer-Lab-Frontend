@@ -36,7 +36,7 @@ const Checkout = () => {
                   <button
                     className="btn btn-sm btn-primary flex items-center gap-2"
                     onClick={toPdf}
-                    style={{fontsize: "16rem"}}
+                    style={{ fontsize: "16rem" }}
                   >
                     <FaFilePdf></FaFilePdf> Generate Pdf
                   </button>
@@ -93,8 +93,10 @@ const Checkout = () => {
                 <h2 className="card-title">{course_name}</h2>
                 <div className="badge badge-secondary">Price : ${price}</div>
                 <div className="flex items-center gap-3">
-                  <div className="badge badge-secondary">
-                    Our Instructer : {instructer}
+                  <div>
+                    <p style={{ fontSize: "12px" }}>
+                      Our Instructer : {instructer}
+                    </p>
                   </div>
                   <div>
                     <img
