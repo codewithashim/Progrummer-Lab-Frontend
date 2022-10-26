@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 
 import app from "../../../Firebase/Firebase.config";
 import { getAuth, updateProfile } from "firebase/auth";
@@ -11,41 +10,42 @@ const EditeProfile = () => {
   const { user } = useContext(AuthContext);
 
   const [error, setError] = useState("");
+
   const [name, setName] = useState(user.displayName);
   const [photoURL, setPhotoURL] = useState(user.photoURL);
 
-  const hendelSubmit = (event) => {
-    event.preventDefault();
-    console.log(name, photoURL);
+  const hendelSubmit = (e) => {
+    e.preventDefault();
+    console.log(name);
+    hendelUpdateProfile(name, photoURL);
   };
 
-  const hendelNameChange = (event) => {
-    setName(event.target.value);
+  const hendelNameChange = (e) => {
+    setName(e.target.value);
+  };
+  const hendelPhotoURL = (e) => {
+    setPhotoURL(e.target.value);
   };
 
-  const hendelPhotoURL = (event) => {
-    setPhotoURL(event.target.value);
+  const hendelUpdateProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateProfile(auth.currentUser, profile)
+      .then(() => {
+        Swal.fire("Successfuly Update Profile", "", "success");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: errorMessage,
+        });
+      });
   };
-
-  //   const hendelUpdateProfile = (name, photoURL) => {
-  //     const profile = {
-  //       displayName: name,
-  //       photoURL: photoURL,
-  //     };
-  //     updateProfile(auth.currentUser, profile)
-  //       .then(() => {
-  //         Swal.fire("Successfuly Update Profile", "", "success");
-  //       })
-  //       .catch((error) => {
-  //         const errorMessage = error.message;
-  //         setError(errorMessage);
-  //         Swal.fire({
-  //           icon: "error",
-  //           title: "Oops...",
-  //           text: errorMessage,
-  //         });
-  //       });
-  //   };
 
   return (
     <div>
@@ -72,9 +72,9 @@ const EditeProfile = () => {
                     <span className="label-text">Full Name</span>
                   </label>
                   <input
+                    onChange={hendelNameChange}
                     type="text"
                     name="name"
-                    onChange={hendelNameChange}
                     defaultValue={name}
                     placeholder="Full Name"
                     className="input input-bordered"
@@ -98,10 +98,9 @@ const EditeProfile = () => {
                 <div>
                   <p className="text-red-600">{error}</p>
                 </div>
-
-                <div className="form-control mt-6">
-                  <Link className="btn btn-primary">Edite Profile</Link>
-                </div>
+                <button className="btn btn-primary mt-3" type="submit">
+                  Update Profile
+                </button>
               </form>
             </div>
           </div>
