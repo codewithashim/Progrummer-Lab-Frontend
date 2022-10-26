@@ -34,7 +34,7 @@ const route = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "blog",
+        path: "/blog",
         loader: () => {
           return fetch("https://progrummer-lab-server.vercel.app/blog");
         },
