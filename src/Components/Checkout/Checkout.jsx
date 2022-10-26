@@ -2,9 +2,11 @@ import React from "react";
 
 const Checkout = () => {
   return (
-    <div>
-      <h1>Hello check out</h1>
-    </div>
+    <>
+      <section>
+        <h1>Wellcome to Checkout</h1>
+      </section>
+    </>
   );
 };
 

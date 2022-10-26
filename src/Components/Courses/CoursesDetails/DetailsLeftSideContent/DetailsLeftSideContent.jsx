@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const DetailsLeftSideContent = ({ details }) => {
   const {
+    id,
     course_name,
     course_duration,
     total_rating,
@@ -80,7 +81,7 @@ const DetailsLeftSideContent = ({ details }) => {
           </div>
         </div>
         <div className="grid h-20 mt-3 card bg-base-300 rounded-box place-items-center">
-          <Link className="btn btn-primary" to="/checkout">
+          <Link className="btn btn-primary" to={`/checkout/${id}`}>
             Purcehes Now
           </Link>
         </div>

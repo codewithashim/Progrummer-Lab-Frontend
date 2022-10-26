@@ -83,7 +83,10 @@ const CetagoryCard = ({ courseCetagory }) => {
             >
               See Details
             </Link>
-            <Link className="btn btn-sm mt-2 btn-primary" to="/checkout">
+            <Link
+              className="btn btn-sm mt-2 btn-primary"
+              to={`/checkout/${id}`}
+            >
               Purches Now
             </Link>
           </div>

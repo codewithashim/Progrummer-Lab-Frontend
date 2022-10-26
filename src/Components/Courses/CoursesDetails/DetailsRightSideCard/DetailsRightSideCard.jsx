@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const DetailsRightSideCard = ({ details }) => {
-  const { course_name, price, instructer, img } = details;
+  const { course_name, price, instructer, img, id } = details;
   return (
     <>
       <div
@@ -19,7 +19,7 @@ const DetailsRightSideCard = ({ details }) => {
           </div>
           <p className="card-subtitle">Instructer: {instructer}</p>
           <div className="card-actions justify-end">
-            <Link to="/checkout" className="btn btn-primary">
+            <Link to={`/checkout/${id}`} className="btn btn-primary">
               Purches Now
             </Link>
           </div>

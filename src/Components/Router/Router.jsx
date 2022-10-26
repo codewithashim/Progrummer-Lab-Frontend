@@ -84,7 +84,12 @@ const route = createBrowserRouter([
       },
 
       {
-        path: "checkout",
+        path: "checkout/:id",
+        loader: ({ params }) => {
+          return fetch(
+            `https://progrummer-lab-server.vercel.app/course/${params.id}`
+          );
+        },
         element: (
           <PrivetRouter>
             <Checkout></Checkout>
