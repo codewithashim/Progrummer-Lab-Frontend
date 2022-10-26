@@ -1,27 +1,41 @@
-import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import DetailsLeftSideContent from "./DetailsLeftSideContent/DetailsLeftSideContent";
 import "./CourseDetails.css";
 import DetailsRightSideCard from "./DetailsRightSideCard/DetailsRightSideCard";
+import Pdf from "react-to-pdf";
+import { createRef } from "react";
+import { FaFilePdf } from "react-icons/fa";
+const ref = createRef();
 
 const CoursesDetails = () => {
   const courseDetails = useLoaderData();
-  console.log(courseDetails);
 
   return (
     <>
       <section className="p-6">
         <div className="DetailsHeader bg-slate-300 p-6 ">
-          <div className="flex">
+          <div className="flex justify-between px-4">
             <div>
               <Link to="/courses" className="btn btn-sm btn-primary">
                 Back To Main Course
               </Link>
             </div>
+            <div>
+              <Pdf targetRef={ref} filename={courseDetails.course_name}>
+                {({ toPdf }) => (
+                  <button
+                    className="btn btn-sm btn-primary flex items-center gap-2"
+                    onClick={toPdf}
+                  >
+                    <FaFilePdf></FaFilePdf> Generate Pdf
+                  </button>
+                )}
+              </Pdf>
+            </div>
           </div>
         </div>
 
-        <div className="DetailsMainContainer">
+        <div className="DetailsMainContainer" ref={ref}>
           <div className="DetailsMainContainerLeft">
             {
               <DetailsLeftSideContent
